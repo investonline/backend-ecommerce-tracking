@@ -6,7 +6,7 @@ use InvestOnline\GoogleAnalytics\TransactionCollector;
 use InvestOnline\GoogleAnalytics\Entities\Transaction;
 use InvestOnline\GoogleAnalytics\Entities\Product;
 
-$transaction = new TransactionCollector('UA-123456789', '346750599.1458644337');
+$transaction = new TransactionCollector('UA-11545849-5', '401042777.1414140826');
 
 $t = new Transaction([
     'id'            => 12345,

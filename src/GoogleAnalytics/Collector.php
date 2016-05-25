@@ -52,12 +52,9 @@ abstract class Collector
             't'     => $hit_type
         ], $query);
 
-        var_dump(http_build_query($query));
-//        exit;
-//
-//        $this->client->post('https://www.google-analytics.com/collect', [
-//            'body' => http_build_query($query)
-//        ]);
+        $this->client->post('https://www.google-analytics.com/collect', [
+            'body' => http_build_query($query)
+        ]);
     }
 
 }
