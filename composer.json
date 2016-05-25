@@ -1,0 +1,17 @@
+{
+    "name": "investonline/backend-ecommerce-tracking",
+    "require": {
+        "guzzlehttp/guzzle": "^6.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "InvestOnline\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Peter Verboom",
+            "email": "p.verboom@invest-online.nl"
+        }
+    ]
+}
