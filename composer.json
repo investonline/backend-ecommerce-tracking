@@ -1,5 +1,9 @@
 {
     "name": "investonline/backend-ecommerce-tracking",
+    "description": "Google Analytics Ecommerce Tracking for back end systems",
+    "keywords": ["google", "analytics", "ecommerce"],
+    "type": "library",
+    "license": "MIT",
     "require": {
         "guzzlehttp/guzzle": "^6.2"
     },
