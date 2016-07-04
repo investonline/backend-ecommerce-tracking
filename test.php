@@ -6,7 +6,7 @@ use InvestOnline\GoogleAnalytics\TransactionCollector;
 use InvestOnline\GoogleAnalytics\Entities\Transaction;
 use InvestOnline\GoogleAnalytics\Entities\Product;
 
-$transaction = new TransactionCollector('UA-11545849-5', '401042777.1414140826');
+$transaction = new TransactionCollector('UA-XXXXXXXX-X', '123456789.1234567890');
 
 $t = new Transaction([
     'id'            => 12345,
@@ -17,7 +17,7 @@ $t = new Transaction([
 
 $t->addProduct(new Product([
     'transaction_id'    => 12345,
-    'name'              => '2 nachten in een 4 sterrenhotel in Deventer',
+    'name'              => 'Yellow Submarine',
     'price'             => 130,
     'quantity'          => 1
 ]));
