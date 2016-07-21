@@ -2,8 +2,6 @@
 
 namespace InvestOnline\GoogleAnalytics;
 
-use GuzzleHttp\Client;
-
 /**
  * Class Collector
  * @package InvestOnline\GoogleAnalytics
@@ -35,8 +33,6 @@ abstract class Collector
     {
         $this->tracking_id = $tracking_id;
         $this->client_id = $client_id;
-
-        $this->client = new Client();
     }
 
     /**
@@ -52,9 +48,15 @@ abstract class Collector
             't'     => $hit_type
         ], $query);
 
-        $this->client->post('https://www.google-analytics.com/collect', [
-            'body' => http_build_query($query)
-        ]);
+        $request = curl_init('https://www.google-analytics.com/collect');
+
+        curl_setopt($request, CURLOPT_POST, true);
+        curl_setopt($request, CURLOPT_POSTFIELDS, http_build_query($query));
+        curl_setopt($request, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($request, CURLOPT_USERAGENT, 'Backend Ecommerce Tracking');
+
+        curl_exec($request);
+        curl_close($request);
     }
 
 }
