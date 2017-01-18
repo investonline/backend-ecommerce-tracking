@@ -24,7 +24,7 @@ final class EnhancedTransactionCollector extends Collector
             throw new InvalidTransactionException("No products added to the transaction");
         }
 
-        return $this->collect('transaction', $transaction->toQuery(), $debug);
+        return $this->collect('event', $transaction->toQuery(), $debug);
     }
 
 }
