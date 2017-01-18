@@ -13,19 +13,25 @@ final class TransactionCollector extends Collector
 {
     /**
      * @param Transaction $transaction
+     * @param boolean $debug
+     * @return array
      * @throws InvalidTransactionException
      */
-    public function send(Transaction $transaction)
+    public function send(Transaction $transaction, $debug = false)
     {
         if (count($transaction->getProducts()) < 1) {
             throw new InvalidTransactionException("No products added to the transaction");
         }
 
-        $this->collect('transaction', $transaction->toQuery());
+        $response = [];
+
+        $response[] = $this->collect('transaction', $transaction->toQuery(), $debug);
 
         foreach($transaction->getProducts() as $product) {
-            $this->collect('item', $product->toQuery());
+            $response[] = $this->collect('item', $product->toQuery(), $debug);
         }
+
+        return $response;
     }
 
 }
