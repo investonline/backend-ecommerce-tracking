@@ -56,7 +56,7 @@ abstract class Collector
 
         curl_setopt($request, CURLOPT_POST, true);
         curl_setopt($request, CURLOPT_POSTFIELDS, http_build_query($query));
-        curl_setopt($request, CURLOPT_RETURNTRANSFER, $debug);
+        curl_setopt($request, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($request, CURLOPT_USERAGENT, 'Backend Ecommerce Tracking');
 
         $response = curl_exec($request);
