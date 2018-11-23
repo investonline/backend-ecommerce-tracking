@@ -24,7 +24,8 @@ class EnhancedTransaction extends Entity
         'ts'    => 'shipping',
         'tt'    => 'tax',
         'cu'    => 'currency',
-        'tcc'   => 'coupon'
+        'tcc'   => 'coupon',
+        'pal'   => 'list',
     ];
 
 
