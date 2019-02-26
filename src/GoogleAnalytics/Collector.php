@@ -38,8 +38,10 @@ abstract class Collector
     /**
      * @param string $hit_type
      * @param array $query
+     * @param boolean $debug
+     * @return mixed
      */
-    protected function collect($hit_type, array $query)
+    protected function collect($hit_type, array $query, $debug = false)
     {
         $query = array_merge([
             'v'     => 1,
@@ -48,15 +50,19 @@ abstract class Collector
             't'     => $hit_type
         ], $query);
 
-        $request = curl_init('https://www.google-analytics.com/collect');
+        $url = $debug ? 'https://www.google-analytics.com/debug/collect' : 'https://www.google-analytics.com/collect';
+
+        $request = curl_init($url);
 
         curl_setopt($request, CURLOPT_POST, true);
         curl_setopt($request, CURLOPT_POSTFIELDS, http_build_query($query));
         curl_setopt($request, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($request, CURLOPT_USERAGENT, 'Backend Ecommerce Tracking');
 
-        curl_exec($request);
+        $response = curl_exec($request);
         curl_close($request);
+
+        return $response;
     }
 
 }

@@ -44,6 +44,8 @@ class EnhancedTransaction extends Entity
     {
         $query = parent::toQuery();
 
+        $query['pa'] = 'purchase';
+
         foreach($this->getProducts() as $index => $product)
         {
             $query = array_merge($query, $product->getProductQuery($index+1));
