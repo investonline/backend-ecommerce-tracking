@@ -35,6 +35,16 @@ class EnhancedTransaction extends Entity
         'cd8'  => 'dimension8',
         'cd9'  => 'dimension9',
         'cd10' => 'dimension10',
+        'cm1'  => 'metric1',
+        'cm2'  => 'metric2',
+        'cm3'  => 'metric3',
+        'cm4'  => 'metric4',
+        'cm5'  => 'metric5',
+        'cm6'  => 'metric6',
+        'cm7'  => 'metric7',
+        'cm8'  => 'metric8',
+        'cm9'  => 'metric9',
+        'cm10' => 'metric10',
     ];
 
     /**
